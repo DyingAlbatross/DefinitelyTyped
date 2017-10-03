@@ -3,13 +3,7 @@
 // Definitions by: DyingAlbatross <https://github.com/dyingalbatross>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-declare module 'tmi.js' {
-	var tmi: Tmi;
-
-	export = tmi;
-}
-
-interface UserState {
+export interface UserState {
   badges: any;
   color: string;
   'display-name': string;
@@ -26,7 +20,7 @@ interface UserState {
   'message-type': string;
 }
 
-interface ChannelState {
+export interface ChannelState {
   'broadcaster-lang': string | null;
   r9k: boolean;
   slow: boolean;
@@ -34,7 +28,7 @@ interface ChannelState {
   channel: string;
 }
 
-interface TmiOptions {
+export interface TmiOptions {
   options?: { 
     clientId?: string; 
     debug?: boolean; 
@@ -58,21 +52,18 @@ interface TmiOptions {
   logger?: any;
 }
 
-interface Tmi {
-  client: ClientStatic;
+export interface Tmi {
+  Client: Client;
 }
 
-interface ClientStatic {
-  new (options?: TmiOptions): Client;
-}
-
-interface ApiOptions {
+export interface ApiOptions {
   url: string;
   headers?: any;
   method?: string;
 }
 
-interface Client {
+export class Client {
+    constructor(options?: TmiOptions);
     /* API */
     api( options: ApiOptions,
          callback: (error: any, response: any, body: any) => void

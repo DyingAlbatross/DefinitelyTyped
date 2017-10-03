@@ -1,6 +1,6 @@
 import * as tmi from 'tmi.js';
 
-let client = new tmi.client(); // returns a client
+let client = new tmi.Client(); // returns a client
 
 /* API */
 client.api({url: ""}, (error, response, body) => {});
